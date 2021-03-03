@@ -15,6 +15,7 @@ class CardPage extends StatelessWidget {
         padding: EdgeInsets.all(20),
         children: <Widget>[
           _cardTipo1(),
+          _cardTipo2(),
         ],
       ),
     );
@@ -24,7 +25,9 @@ class CardPage extends StatelessWidget {
   Widget _cardTipo1() {
   
     return Card(
-      
+      elevation: 10.0,
+      shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(50) ),
+
       child: Column(
         children: <Widget>[
           ListTile(
@@ -40,6 +43,7 @@ class CardPage extends StatelessWidget {
                 child: Text('Cancelar'),
                 onPressed: (){}, 
               ),
+              SizedBox(height: 30.0),
               TextButton(
                 child: Text('Ok'),
                 onPressed: (){}, 
@@ -50,5 +54,30 @@ class CardPage extends StatelessWidget {
       ),
     );
   
+  }
+
+  Widget _cardTipo2(){
+
+    return Card(
+      elevation: 10.0,
+      
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            image : NetworkImage('https://www.tom-archer.com/wp-content/uploads/2018/06/milford-sound-night-fine-art-photography-new-zealand.jpg'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration( milliseconds: 200 ),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+         
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text('No tengo idea de que poner'),
+          )
+        ]
+      )
+    );
+
   }
 }

@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
 
     return FutureBuilder(
       future: menuProvider.cargarData(),
-      //initialData: [],
+      initialData: [],
       builder: ( BuildContext context, AsyncSnapshot<List<dynamic>> snapshot ){
 
         //print('builder');

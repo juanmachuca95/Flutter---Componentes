@@ -1,4 +1,5 @@
 
+
 import 'package:flutter/material.dart';
 
 class AlertPage extends StatelessWidget {
@@ -12,6 +13,12 @@ class AlertPage extends StatelessWidget {
         title: Text('Alert Page'),
         backgroundColor: Colors.orange,        
       ),
+      body: Center(
+        child: TextButton(
+          child: Text('Mostrar Alerta'),    
+          onPressed: () => _mostrarAlerta( context ),
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.orange,
         child: Icon( Icons.keyboard_arrow_left ),
@@ -21,5 +28,39 @@ class AlertPage extends StatelessWidget {
       ),
     );
 
+  }
+
+  void _mostrarAlerta( BuildContext context ){
+    showDialog(
+      context: context, 
+      barrierDismissible: false,
+      builder: (context){
+
+        return AlertDialog(
+          title: Text('Titulo'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Contenido'),
+              FlutterLogo( size: 100.0 )
+            ],
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(), 
+              child: Text('Cancelar')
+            ),
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              }, 
+              child: Text('OK')
+            )
+          ],
+          
+        );
+
+      }
+    );
   }
 }
