@@ -25,6 +25,11 @@
             "ruta" : "slider",
             "icon" : "list",
             "texto": "slider"
+        },
+        {
+            "ruta" : "lista",
+            "icon" : "list",
+            "texto": "Lista Page"
         }
     ]
 }
